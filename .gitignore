@@ -1,0 +1,26 @@
+# Composer
+composer.phar
+composer.lock
+vendor
+
+# npm
+node_modules
+package-lock.json
+
+# Coverage Reporting
+report
+
+# Generated Archives
+pkg
+
+# IntelliJ
+.idea
+
+# Gulp
+build
+
+# PHPStan
+tests/phpstan.config.php
+
+# macOS
+.DS_Store
