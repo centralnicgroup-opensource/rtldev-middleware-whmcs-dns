@@ -1,0 +1,30 @@
+{
+  "schema": "1.0",
+  "type": "whmcs-addons",
+  "name": "ispapidns-addon",
+  "license": "MIT",
+  "category": "digitalservices",
+  "description": {
+    "name": "ISPAPI DNS Addon v0.0.0",
+    "tagline": "Manage DNS",
+    "long": "",
+    "features": [
+      "Manage DNS zones for your domains at HEXONET"
+    ]
+  },
+  "logo": {
+    "filename": "logo.png"
+  },
+  "support": {
+    "homepage": "https:\/\/www.hexonet.net\/",
+    "learn_more": "https:\/\/github.com\/hexonet\/whmcs-ispapi-dns\/blob\/master\/README.md",
+    "support_url": "https:\/\/github.com\/hexonet\/whmcs-ispapi-dns\/wiki\/Contact-Us",
+    "docs_url": "https:\/\/github.com\/hexonet\/whmcs-ispapi-dns\/wiki\/Usage-Guide"
+  },
+  "authors": [
+    {
+      "name": "HEXONET",
+      "homepage": "https:\/\/www.hexonet.net\/"
+    }
+  ]
+}

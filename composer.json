@@ -1,0 +1,39 @@
+{
+  "name": "hexonet/whmcs-ispapi-dns",
+  "description": "ISPAPI DNS Addon Module for WHMCS",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sebastian Vassiliou",
+      "email": "svassiliou@hexonet.net"
+    }
+  ],
+  "require-dev": {
+    "phpstan/phpstan": "^0.12.56"
+  },
+  "config": {
+    "vendor-dir": "addons/ispapidns/vendor"
+  },
+  "autoload": {
+    "psr-4": {
+      "HEXONET\\WHMCS\\ISPAPI\\DNS\\": "addons/ispapidns/lib/"
+    }
+  },
+  "scripts": {
+    "phpstan": [
+      "rm -rf addons/ispapidns/vendor",
+      "@composer update",
+      "phpstan analyze -c phpstan.neon"
+    ],
+    "test": [
+      "@composer update",
+      "phpunit"
+    ]
+  },
+  "require": {
+    "ext-openssl": "*",
+    "ext-json": "*",
+    "badcow/dns": "^4.1"
+  }
+}
