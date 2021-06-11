@@ -1,25 +1,25 @@
 <?php
 
-namespace IspapiTest;
+namespace CNicTest;
 
 use PHPUnit\Framework\TestCase;
 
 /**
- * ISPAPI DNS Module Test
+ * CentralNic DNS Module Test
  *
  * PHPUnit test that asserts the fundamental requirements of a WHMCS
  * provisioning module.
  *
  * Custom module tests are added in addtion.
  *
- * @copyright Copyright (c) HEXONET GmbH 2021
- * @license https://github.com/hexonet/whmcs-ispapi-dns/LICENSE
+ * @copyright Copyright (c) CentralNic Group PLC 2021
+ * @license https://github.com/centralnic-reseller/whmcs-dns/LICENSE
  */
 
-class IspapiDNSModuleTest extends TestCase
+class CNicDNSModuleTest extends TestCase
 {
     /** @var string $moduleName */
-    protected $moduleName = 'ispapidns';
+    protected $moduleName = 'cnicdns';
 
     /**
      * Asserts the required config options function is defined.

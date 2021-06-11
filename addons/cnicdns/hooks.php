@@ -1,17 +1,17 @@
 <?php
 
 /**
- * ISPAPI DNS Addon for WHMCS
+ * CentralNic DNS Addon for WHMCS
  *
- * DNS management using WHMCS & HEXONET
+ * DNS management using WHMCS & CentralNic brands
  *
  * For more information, please refer to the online documentation.
- * @see https://wiki.hexonet.net/wiki/WHMCS_Modules
+ * @see https://centralnic-reseller.github.io/centralnic-reseller/
  * @noinspection PhpUnused
  */
 
-use HEXONET\WHMCS\ISPAPI\DNS\DNSHelper;
-use HEXONET\WHMCS\ISPAPI\DNS\Template;
+use CNIC\WHMCS\DNS\DNSHelper;
+use CNIC\WHMCS\DNS\Template;
 
 if (!defined("WHMCS")) {
     die("This file cannot be accessed directly");
@@ -19,13 +19,12 @@ if (!defined("WHMCS")) {
 
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// @phpstan-ignore-next-line
-add_hook("AfterRegistrarRegistration", 1, 'ispapidns_apply');
+add_hook("AfterRegistrarRegistration", 1, 'cnicdns_apply');
 
 /**
  * @param array<string, mixed> $vars
  */
-function ispapidns_apply(array $vars): void
+function cnicdns_apply(array $vars): void
 {
     if (isset($vars['functionSuccessful']) && $vars['functionSuccessful'] === false) {
         return;

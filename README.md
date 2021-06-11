@@ -1,11 +1,11 @@
-# WHMCS "ISPAPI" DNS Module #
+# WHMCS "CentralNic" DNS Module #
 
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
-[![Build Status](https://github.com/hexonet/whmcs-ispapi-dns/workflows/Release/badge.svg?branch=master)](https://github.com/hexonet/whmcs-ispapi-dns/workflows/Release/badge.svg?branch=master)
+[![Build Status](https://github.com/centralnic-reseller/whmcs-dns/workflows/Release/badge.svg?branch=master)](https://github.com/centralnic-reseller/whmcs-dns/workflows/Release/badge.svg?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/hexonet/whmcs-ispapi-dns/blob/master/CONTRIBUTING.md)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/centralnic-reseller/whmcs-dns/blob/master/CONTRIBUTING.md)
 
-This Repository covers the WHMCS DNS Module of HEXONET. It provides the following features in WHMCS:
+This Repository covers the WHMCS DNS Module of CentralNic. It provides the following features in WHMCS:
 
 ## Requirements ##
 * PHP 7.3 or 7.4
@@ -13,14 +13,14 @@ This Repository covers the WHMCS DNS Module of HEXONET. It provides the followin
 * ISPAPI or KeySystems Registrar Module
 
 ## Installation ##
-1. Upload the `addons/ispapidns/` folder to the `modules/addons/` folder of your WHMCS installation
+1. Upload the `addons/cnicdns/` folder to the `modules/addons/` folder of your WHMCS installation
 2. Open the Admin Area and navigate to `System Settings` => `Addon Modules`
-3. Find the `ISPAPI DNS` module and click on `Activate`
+3. Find the `CentralNic DNS` module and click on `Activate`
 4. Click on `Configure` and make sure to set proper access controls
 5. Click on `Save Changes` to save module configuration
 
 ## Configuration ##
-1. Open the Admin Area and navigate to `Addons` => `ISPAPI DNS`
+1. Open the Admin Area and navigate to `Addons` => `CentralNic DNS`
 2. Click on `Add` to create your first template
 3. Fill out the form
    * `Name` can be anything you want
@@ -55,14 +55,14 @@ The DNS template will be automatically applied under the following conditions:
 ## Troubleshooting ##
 If the module does not work as intended, e.g. a template is not being applied as expected, please follow the following steps:
 1. Make sure the [`conditions`](#zone-application) are met
-2. If they are, open the Admin Area and navigate to `Addons` => `ISPAPI DNS`
+2. If they are, open the Admin Area and navigate to `Addons` => `CentralNic DNS`
 3. Click on the `Logs` button to check the log entries for the addon
 4. If there is any error message, please check that the zone template is [`formatted correctly`](#zone-formatting)
 
 ## Resources ##
 
-* [Documentation](https://centralnic-reseller.github.io/centralnic-reseller/docs/hexonet/whmcs/whmcs-ispapi-dns/)
-* [Release Notes](https://github.com/hexonet/whmcs-ispapi-dns/releases)
+* [Documentation](https://centralnic-reseller.github.io/centralnic-reseller/docs/centralnic/whmcs/whmcs-dns/)
+* [Release Notes](https://github.com/centralnic-reseller/whmcs-dns/releases)
 
 ## Authors ##
 
@@ -71,6 +71,6 @@ If the module does not work as intended, e.g. a template is not being applied as
 
 ## License ##
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/hexonet/whmcs-ispapi-dns/blob/master/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/centralnic-reseller/whmcs-dns/blob/master/LICENSE) file for details.
 
-[HEXONET GmbH](https://hexonet.net)
+[CentralNic Group PLC](https://centralnicgroup.com)

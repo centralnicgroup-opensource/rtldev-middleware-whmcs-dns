@@ -67,5 +67,3 @@
         });
     });
 </script>
-
-{include file="create.tpl"}

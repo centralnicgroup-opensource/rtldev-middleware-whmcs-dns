@@ -10,16 +10,16 @@ date="$(date +'%Y-%m-%d')"
 
 printf -v sed_script 's/version\" => \"[0-9]+\.[0-9]+\.[0-9]+\"/version" => "%s"/g' "${newversion}"
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  sed -E -i '' -e "${sed_script}" addons/ispapidns/ispapidns.php
+  sed -E -i '' -e "${sed_script}" addons/cnicdns/cnicdns.php
 else
-  sed -E -i -e "${sed_script}" addons/ispapidns/ispapidns.php
+  sed -E -i -e "${sed_script}" addons/cnicdns/cnicdns.php
 fi
 
-printf -v sed_script 's/"ISPAPI DNS Addon v[0-9]+\.[0-9]+\.[0-9]+"/"ISPAPI DNS Addon v%s"/g' "${newversion}"
+printf -v sed_script 's/"CentralNic DNS Addon v[0-9]+\.[0-9]+\.[0-9]+"/"CentralNic DNS Addon v%s"/g' "${newversion}"
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  sed -E -i '' -e "${sed_script}" addons/ispapidns/whmcs.json
+  sed -E -i '' -e "${sed_script}" addons/cnicdns/whmcs.json
 else
-  sed -E -i -e "${sed_script}" addons/ispapidns/whmcs.json
+  sed -E -i -e "${sed_script}" addons/cnicdns/whmcs.json
 fi
 
 printf -v sed_script 's/"version": "[0-9]+\.[0-9]+\.[0-9]+"/"version": "%s"/g' "${newversion}"
