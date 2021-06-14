@@ -1,31 +1,31 @@
 <?php
 
 /**
- * ISPAPI DNS Addon for WHMCS
+ * CentralNic DNS Addon for WHMCS
  *
- * DNS management using WHMCS & HEXONET
+ * DNS management using WHMCS & CentralNick brands
  *
  * For more information, please refer to the online documentation.
- * @see https://wiki.hexonet.net/wiki/WHMCS_Modules
+ * @see https://centralnic-reseller.github.io/centralnic-reseller/
  * @noinspection PhpUnused
  */
 
 require_once(__DIR__ . '/vendor/autoload.php');
 
-use HEXONET\WHMCS\ISPAPI\DNS\DNSHelper;
-use HEXONET\WHMCS\ISPAPI\DNS\Product;
-use HEXONET\WHMCS\ISPAPI\DNS\Template;
+use CNIC\WHMCS\DNS\DNSHelper;
+use CNIC\WHMCS\DNS\Product;
+use CNIC\WHMCS\DNS\Template;
 
 /**
  * Configuration of the addon module.
  * @return array<string, mixed>
  */
-function ispapidns_config(): array
+function cnicdns_config(): array
 {
     return [
-        "name" => "ISPAPI DNS",
+        "name" => "CentralNic DNS",
         "description" => "Configure DNS templates for your domains",
-        "author" => '<a href="https://www.hexonet.net/" target="_blank"><img style="max-width:100px" src="' . DNSHelper::getLogo() . '" alt="HEXONET" /></a>',
+        "author" => '<a href="https://www.centralnicgroup.com/" target="_blank"><img style="max-width:100px" src="' . DNSHelper::getLogo() . '" alt="CentralNic" /></a>',
         "language" => "english",
         "version" => "0.0.0",
 //        "fields" => [
@@ -47,7 +47,7 @@ function ispapidns_config(): array
  * This function will be called with the activation of the add-on module.
  * @return array<string, string>
  */
-function ispapidns_activate(): array
+function cnicdns_activate(): array
 {
     DNSHelper::createSchema();
     return ['status' => 'success','description' => 'Installed'];
@@ -56,7 +56,7 @@ function ispapidns_activate(): array
 /**
  * @param array<string, mixed> $vars
  */
-function ispapidns_upgrade(array $vars): void
+function cnicdns_upgrade(array $vars): void
 {
     DNSHelper::updateSchema($vars['version']);
 }
@@ -65,7 +65,7 @@ function ispapidns_upgrade(array $vars): void
  * This function will be called with the deactivation of the add-on module.
  * @return array<string, string>
  */
-function ispapidns_deactivate(): array
+function cnicdns_deactivate(): array
 {
     DNSHelper::dropSchema();
     return ['status' => 'success','description' => 'Uninstalled'];
@@ -75,7 +75,7 @@ function ispapidns_deactivate(): array
  * Module interface functionality
  * @param array<string, mixed> $vars
  */
-function ispapidns_output(array $vars): void
+function cnicdns_output(array $vars): void
 {
     global $templates_compiledir;
 
@@ -86,7 +86,7 @@ function ispapidns_output(array $vars): void
 
     switch (@$_GET['page']) {
         case 'service':
-            ispapidns_output_service($_REQUEST['action'], @$_REQUEST['id'], $vars);
+            cnicdns_output_service($_REQUEST['action'], @$_REQUEST['id'], $vars);
             break;
         default:
             $smarty = new Smarty();
@@ -117,7 +117,7 @@ function ispapidns_output(array $vars): void
  * @param int|null $actionId
  * @param array<string, mixed> $vars
  */
-function ispapidns_output_service(string $actionName, ?int $actionId, array $vars): void
+function cnicdns_output_service(string $actionName, ?int $actionId, array $vars): void
 {
     header('Content-Type: application/json');
     $response = [];

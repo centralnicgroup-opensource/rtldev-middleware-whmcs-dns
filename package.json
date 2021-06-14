@@ -1,6 +1,6 @@
 {
-  "name": "whmcs-ispapi-dns",
-  "description": "WHMCS ISPAPI DNS Module",
+  "name": "whmcs-cnicdns",
+  "description": "WHMCS CentralNic DNS Module",
   "version": "0.0.0-development",
   "private": true,
   "author": {
@@ -12,9 +12,9 @@
     "node": ">=10.18.0",
     "npm": ">=6.13.4"
   },
-  "homepage": "https://github.com/hexonet/whmcs-ispapi-dns",
-  "repository": "github:hexonet/whmcs-ispapi-dns",
-  "bugs": "https://github.com/hexonet/whmcs-ispapi-dns/issues",
+  "homepage": "https://github.com/centralnic-reseller/whmcs-dns",
+  "repository": "github:centralnic-reseller/whmcs-dns",
+  "bugs": "https://github.com/centralnic-reseller/whmcs-dns/issues",
   "maintainers": [
     {
       "name": "Kai Schwarz",
@@ -29,14 +29,15 @@
     "whmcs",
     "web host automation platform",
     "dns module",
-    "hexonet",
-    "ispapi",
+    "CentralNic",
+    "HEXONET",
+    "ISPAPI",
     "domain",
     "isp",
-    "dnssec",
+    "DNSSEC",
     "security",
     "encrypt",
-    "dns",
+    "DNS",
     "premium",
     "preregistration",
     "registration",
@@ -57,7 +58,7 @@
     "phpCompatibility": "./scripts/phpcompatibility.sh",
     "codeCheck": "phpcs --standard=PSR12 -q -n --colors --ignore=vendor addons tests",
     "codeFix": "phpcbf --standard=PSR12 -q --ignore=vendor addons tests",
-    "phpStan": "./addons/ispapidns/vendor/bin/phpstan analyse",
+    "phpStan": "./addons/cnicdns/vendor/bin/phpstan analyse",
     "test": "phpunit"
   }
 }

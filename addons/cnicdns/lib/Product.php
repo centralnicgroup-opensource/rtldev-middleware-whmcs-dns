@@ -1,6 +1,6 @@
 <?php
 
-namespace HEXONET\WHMCS\ISPAPI\DNS;
+namespace CNIC\WHMCS\DNS;
 
 use Illuminate\Database\Capsule\Manager as DB;
 

@@ -1,6 +1,6 @@
 {
-  "name": "hexonet/whmcs-ispapi-dns",
-  "description": "ISPAPI DNS Addon Module for WHMCS",
+  "name": "centralnick/whmcs-dns",
+  "description": "CentralNic DNS Addon Module for WHMCS",
   "type": "project",
   "license": "MIT",
   "authors": [
@@ -13,16 +13,16 @@
     "phpstan/phpstan": "^0.12.56"
   },
   "config": {
-    "vendor-dir": "addons/ispapidns/vendor"
+    "vendor-dir": "addons/cnicdns/vendor"
   },
   "autoload": {
     "psr-4": {
-      "HEXONET\\WHMCS\\ISPAPI\\DNS\\": "addons/ispapidns/lib/"
+      "CNIC\\WHMCS\\DNS\\": "addons/cnicdns/lib/"
     }
   },
   "scripts": {
     "phpstan": [
-      "rm -rf addons/ispapidns/vendor",
+      "rm -rf addons/cnicdns/vendor",
       "@composer update",
       "phpstan analyze -c phpstan.neon"
     ],
@@ -33,7 +33,6 @@
   },
   "require": {
     "ext-openssl": "*",
-    "ext-json": "*",
-    "badcow/dns": "^4.1"
+    "ext-json": "*"
   }
 }

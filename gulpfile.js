@@ -14,7 +14,7 @@ const cfg = require('./gulpfile.json')
  */
 async function doComposerUpdate() {
     try {
-        await exec(`rm -rf addons/ispapidns/vendor`);
+        await exec(`rm -rf addons/cnicdns/vendor`);
     } catch (e) {
     }
     await eosp(composer("update --no-dev"))

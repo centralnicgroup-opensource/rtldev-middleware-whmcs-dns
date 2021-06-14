@@ -1,6 +1,6 @@
 <?php
 
-// ISPAPI DNS Addon Language File - Deutsch
+// CentralNic DNS Addon Language File - Deutsch
 
 $_ADDONLANG = [
     'deleteConfirm' => "Möchten Sie diese Zonenvorlage wirklich löschen?",
