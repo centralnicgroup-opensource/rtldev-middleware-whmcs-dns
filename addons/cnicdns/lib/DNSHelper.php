@@ -38,21 +38,6 @@ class DNSHelper
             $table->foreign('template_id')->references('id')->on('mod_cnicdns_templates')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('product_id')->references('id')->on('tblproducts')->onDelete('cascade')->onUpdate('cascade');
         });
-
-//        DB::schema()->create('mod_cnicdns_records', function (Blueprint $table) {
-//            $table->engine = 'InnoDB';
-//            $table->increments('id');
-//            $table->integer('template_id')->index();
-//            $table->string('hostname', 16);
-//            $table->string('type', 5);
-//            $table->string('address', 32);
-//            $table->integer('priority')->nullable();
-//            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-//            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
-//        });
-//        DB::schema()->table('mod_cnicdns_records', function ($table) {
-//            $table->foreign('template_id')->references('id')->on('mod_cnicdns_templates')->onDelete('cascade')->onUpdate('cascade');
-//        });
     }
 
     /**
@@ -68,9 +53,8 @@ class DNSHelper
      */
     public static function dropSchema(): void
     {
-        DB::schema()->dropIfExists('mod_cnicdns_templates');
         DB::schema()->dropIfExists('mod_cnicdns_products');
-        DB::schema()->dropIfExists('mod_cnicdns_records');
+        DB::schema()->dropIfExists('mod_cnicdns_templates');
     }
 
     /**
