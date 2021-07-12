@@ -7,19 +7,25 @@
 
 This Repository covers the WHMCS DNS Module of CentralNic. It provides the following features in WHMCS:
 
+* DNS Templating
+* Management of DNS Zones and threir RRs
+
 ## Requirements ##
+
 * PHP 7.3 or 7.4
 * WHMCS 8.0 or greater
-* ISPAPI or KeySystems Registrar Module
+* [HEXONET/ispapi](https://github.com/hexonet/whmcs-ispapi-registrar#readme) or [RRPproxy/keysystems](https://github.com/rrpproxy/whmcs-rrpproxy-registrar#readme) Registrar Module
 
 ## Installation ##
-1. Upload the `addons/cnicdns/` folder to the `modules/addons/` folder of your WHMCS installation
+
+1. Upload the `modules/cnicdns/` folder to the `modules/addons/` folder of your WHMCS installation
 2. Open the Admin Area and navigate to `System Settings` => `Addon Modules`
 3. Find the `CentralNic DNS` module and click on `Activate`
 4. Click on `Configure` and make sure to set proper access controls
 5. Click on `Save Changes` to save module configuration
 
 ## Configuration ##
+
 1. Open the Admin Area and navigate to `Addons` => `CentralNic DNS`
 2. Click on `Add` to create your first template
 3. Fill out the form
@@ -30,6 +36,7 @@ This Repository covers the WHMCS DNS Module of CentralNic. It provides the follo
 4. Click `Save` to create the new template
 
 ## Zone formatting ##
+
 Write one record per line in this format:
 `<hostname> <type> <address> (<priority>)`
 
@@ -46,14 +53,18 @@ Example:
     @ MX mail.@ 10
 
 ## Zone application ##
+
 The DNS template will be automatically applied under the following conditions:
+
 * The domain is assigned to a supported registrar module (currently `ispapi` and `keysystems` are supported)
 * The domain has the `DNS Management` feature activated
 * There is a hosting package in WHMCS for that domain, and a zone template that is assigned as default for that package, *or*
 * There is a zone template configured as global default
 
 ## Troubleshooting ##
+
 If the module does not work as intended, e.g. a template is not being applied as expected, please follow the following steps:
+
 1. Make sure the [`conditions`](#zone-application) are met
 2. If they are, open the Admin Area and navigate to `Addons` => `CentralNic DNS`
 3. Click on the `Logs` button to check the log entries for the addon

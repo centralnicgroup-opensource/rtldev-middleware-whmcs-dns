@@ -13,11 +13,11 @@
     "phpstan/phpstan": "^0.12.56"
   },
   "config": {
-    "vendor-dir": "addons/cnicdns/vendor"
+    "vendor-dir": "modules/addons/cnicdns/vendor"
   },
   "autoload": {
     "psr-4": {
-      "CNIC\\WHMCS\\DNS\\": "addons/cnicdns/lib/"
+      "CNIC\\WHMCS\\DNS\\": "modules/addons/cnicdns/lib/"
     }
   },
   "scripts": {

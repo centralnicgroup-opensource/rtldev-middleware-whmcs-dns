@@ -8,7 +8,7 @@ parameters:
         - .
     scanFiles:
     scanDirectories:
-        - addons
+        - modules
         - tests
     excludes_analyse:
         - node_modules
