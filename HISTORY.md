@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/centralnic-reseller/whmcs-dns/compare/v1.0.0...v1.0.1) (2021-07-12)
+
+
+### Bug Fixes
+
+* **archive:** fixed filename prefix ([00969dc](https://github.com/centralnic-reseller/whmcs-dns/commit/00969dc739ef3030ad1c8b476cb329526b5664d8))
+
 # 1.0.0 (2021-07-12)
 
 
