@@ -4,7 +4,7 @@
     "phpcschkcmd": "phpcs -n --colors --standard=PSR12",
     "phpcomptcmd": "phpcs -n --colors --standard=PHPCompatibility --runtime-set testVersion \"$(php -r 'echo PHP_MAJOR_VERSION . \".\" . PHP_MINOR_VERSION;')\"",
     "phpstancmd": "./modules/addons/cnicdns/vendor/bin/phpstan analyse",
-    "archiveFileName": "whmcs-cnicdns",
+    "archiveFileName": "whmcs-cnic-dns",
     "archiveBuildPath": "build",
     "filesForArchive": [
         "README.md",
