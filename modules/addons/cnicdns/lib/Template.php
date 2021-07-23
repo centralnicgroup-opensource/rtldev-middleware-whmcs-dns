@@ -16,9 +16,9 @@ class Template
 
     /**
      * @param string $domain
-     * @return string
+     * @return string|null
      */
-    public static function getForDomain(string $domain): string
+    public static function getForDomain(string $domain)
     {
         $productId = DB::table('tblhosting')
             ->where('domain', '=', $domain)
@@ -37,9 +37,9 @@ class Template
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public static function getDefault(): string
+    public static function getDefault()
     {
         return DB::table('mod_cnicdns_templates')
             ->where('default', '=', true)
