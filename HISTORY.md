@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/centralnic-reseller/whmcs-dns/compare/v1.0.1...v1.0.2) (2021-07-23)
+
+
+### Bug Fixes
+
+* **hook:** fix hook when no zone is configured ([a8d2ad2](https://github.com/centralnic-reseller/whmcs-dns/commit/a8d2ad2ce29cfaa2796eded57fe939ce12d8956e))
+
 ## [1.0.1](https://github.com/centralnic-reseller/whmcs-dns/compare/v1.0.0...v1.0.1) (2021-07-12)
 
 
