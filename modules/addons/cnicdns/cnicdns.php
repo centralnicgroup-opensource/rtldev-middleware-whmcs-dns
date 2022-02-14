@@ -23,7 +23,7 @@ use CNIC\WHMCS\DNS\Template;
 function cnicdns_config(): array
 {
     return [
-        "name" => "CentralNic DNS",
+        "name" => "CNIC DNS",
         "description" => "Configure DNS templates for your domains",
         "author" => '<a href="https://www.centralnicgroup.com/" target="_blank"><img style="max-width:100px" src="' . DNSHelper::getLogo() . '" alt="CentralNic" /></a>',
         "language" => "english",
@@ -38,7 +38,7 @@ function cnicdns_config(): array
 function cnicdns_activate(): array
 {
     DNSHelper::createSchema();
-    return ['status' => 'success','description' => 'Installed'];
+    return ['status' => 'success', 'description' => 'Installed'];
 }
 
 /**
@@ -56,7 +56,7 @@ function cnicdns_upgrade(array $vars): void
 function cnicdns_deactivate(): array
 {
     DNSHelper::dropSchema();
-    return ['status' => 'success','description' => 'Uninstalled'];
+    return ['status' => 'success', 'description' => 'Uninstalled'];
 }
 
 /**
