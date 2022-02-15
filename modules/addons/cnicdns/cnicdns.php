@@ -27,7 +27,7 @@ function cnicdns_config(): array
         "description" => "Configure DNS templates for your domains",
         "author" => '<a href="https://www.centralnicgroup.com/" target="_blank"><img style="max-width:100px" src="' . DNSHelper::getLogo() . '" alt="CentralNic" /></a>',
         "language" => "english",
-        "version" => "1.0.2"
+        "version" => "1.0.3"
     ];
 }
 

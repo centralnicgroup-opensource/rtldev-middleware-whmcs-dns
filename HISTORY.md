@@ -1,3 +1,11 @@
+## [1.0.3](https://github.com/centralnic-reseller/whmcs-dns/compare/v1.0.2...v1.0.3) (2022-02-15)
+
+
+### Bug Fixes
+
+* **logo:** update CentralNic logo ([4ef548a](https://github.com/centralnic-reseller/whmcs-dns/commit/4ef548a7f0cfc76716fcec1ebca2bad3fdba6d2a))
+* **name:** rename module to CNIC DNS ([6a8bd71](https://github.com/centralnic-reseller/whmcs-dns/commit/6a8bd719743d89b82176035f61cbad6cc8e60954))
+
 ## [1.0.2](https://github.com/centralnic-reseller/whmcs-dns/compare/v1.0.1...v1.0.2) (2021-07-23)
 
 
