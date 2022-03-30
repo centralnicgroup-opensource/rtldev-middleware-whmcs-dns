@@ -42,8 +42,12 @@ function cnicdns_apply(array $vars): void
     $template = Template::getForDomain($domainName);
 
     $dnsRecords = [];
+    if (!$template) {
+        localAPI('LogActivity', ['description' => "[DNS] ERROR: empty template"]);
+        return;
+    }
     $lines = preg_split("/((\r?\n)|(\r\n?))/", $template);
-    if (!$lines) {
+    if ($lines === false) {
         localAPI('LogActivity', ['description' => "[DNS] ERROR: empty template"]);
         return;
     }
