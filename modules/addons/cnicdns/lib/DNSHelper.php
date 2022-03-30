@@ -13,7 +13,6 @@ class DNSHelper
     public static function createSchema(): void
     {
         DB::schema()->create('mod_cnicdns_templates', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name', 32);
             $table->boolean('default');
@@ -25,7 +24,6 @@ class DNSHelper
         });
 
         DB::schema()->create('mod_cnicdns_products', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->unsignedInteger('template_id')->index();
             $table->integer('product_id')->unique();
@@ -33,10 +31,6 @@ class DNSHelper
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             // @phpstan-ignore-next-line
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
-        });
-        DB::schema()->table('mod_cnicdns_products', function ($table) {
-            $table->foreign('template_id')->references('id')->on('mod_cnicdns_templates')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('product_id')->references('id')->on('tblproducts')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

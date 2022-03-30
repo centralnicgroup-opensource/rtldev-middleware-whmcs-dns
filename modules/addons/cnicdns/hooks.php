@@ -11,6 +11,7 @@
  */
 
 use CNIC\WHMCS\DNS\DNSHelper;
+use CNIC\WHMCS\DNS\Product;
 use CNIC\WHMCS\DNS\Template;
 
 if (!defined("WHMCS")) {
@@ -95,3 +96,7 @@ function cnicdns_apply(array $vars): void
         localAPI('LogActivity', ['description' => "{$domainName}: successfully applied zone template [DNS]"]);
     }
 }
+
+add_hook('ProductDelete', 1, function ($vars) {
+    Product::delete($vars["pid"]);
+});

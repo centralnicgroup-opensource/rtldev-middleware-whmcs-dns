@@ -30,4 +30,11 @@ class Product
             ->where('type', '=', 'hostingaccount')
             ->first(['id', 'gid', 'name']);
     }
+
+    public static function delete(int $productId)
+    {
+        return DB::table('mod_cnicdns_products')
+            ->where('product_id', '=', $productId)
+            ->delete();
+    }
 }

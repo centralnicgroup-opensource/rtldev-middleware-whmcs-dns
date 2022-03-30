@@ -153,6 +153,10 @@ class Template
      */
     public static function delete(int $templateid): int
     {
+        DB::table('mod_cnicdns_products')
+            ->where('template_id', '=', $templateid)
+            ->delete();
+
         return DB::table('mod_cnicdns_templates')
             ->where('id', '=', $templateid)
             ->delete();
