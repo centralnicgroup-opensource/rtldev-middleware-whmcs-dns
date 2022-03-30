@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/centralnic-reseller/whmcs-dns/compare/v1.1.0...v1.2.0) (2022-03-30)
+
+
+### Features
+
+* **phpstan:** activate phpstan and fix reported issues ([893fbd8](https://github.com/centralnic-reseller/whmcs-dns/commit/893fbd8f5b5880a1abba3e58d1c86999976bf665))
+
 # [1.1.0](https://github.com/centralnic-reseller/whmcs-dns/compare/v1.0.4...v1.1.0) (2022-03-30)
 
 
