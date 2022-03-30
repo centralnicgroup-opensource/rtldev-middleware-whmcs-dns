@@ -37,6 +37,7 @@ function cnicdns_config(): array
  */
 function cnicdns_activate(): array
 {
+    DNSHelper::dropSchema();
     DNSHelper::createSchema();
     return ['status' => 'success', 'description' => 'Installed'];
 }
