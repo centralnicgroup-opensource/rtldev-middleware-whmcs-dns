@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/centralnic-reseller/whmcs-dns/compare/v1.0.4...v1.1.0) (2022-03-30)
+
+
+### Features
+
+* **db:** no longer use InnoDB to avoid permission problems ([4a7f12a](https://github.com/centralnic-reseller/whmcs-dns/commit/4a7f12a13f364229fde1c2c32110bdfee4f044da))
+
 ## [1.0.4](https://github.com/centralnic-reseller/whmcs-dns/compare/v1.0.3...v1.0.4) (2022-03-30)
 
 
