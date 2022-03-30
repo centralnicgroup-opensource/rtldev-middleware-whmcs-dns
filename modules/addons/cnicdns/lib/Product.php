@@ -31,7 +31,11 @@ class Product
             ->first(['id', 'gid', 'name']);
     }
 
-    public static function delete(int $productId)
+    /**
+     * @param int $productId
+     * @return int
+     */
+    public static function delete(int $productId): int
     {
         return DB::table('mod_cnicdns_products')
             ->where('product_id', '=', $productId)

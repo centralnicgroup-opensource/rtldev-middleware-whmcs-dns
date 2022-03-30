@@ -12,10 +12,10 @@ parameters:
         - tests
     excludes_analyse:
         - node_modules
-        - addons/cnicdns/vendor
+        - modules/addons/cnicdns/vendor
         - build
         - tests 
     bootstrapFiles:
         - tests/_bootstrap.phpstan.php
-        - addons/cnicdns/vendor/autoload.php
+        - modules/addons/cnicdns/vendor/autoload.php
         

@@ -21,6 +21,18 @@ async function doComposerUpdate() {
 }
 
 /**
+ * Perform composer update
+ * @return stream
+ */
+async function doComposerDevUpdate() {
+    try {
+        await exec(`rm -rf modules/addons/cnicdns/vendor`);
+    } catch (e) {
+    }
+    await eosp(composer("update"))
+}
+
+/**
  * Perform PHP Linting
  */
 async function doLint() {
@@ -34,7 +46,7 @@ async function doLint() {
     try {
         await exec(`${cfg.phpcschkcmd} ${cfg.phpcsparams}`);
         await exec(`${cfg.phpcomptcmd} ${cfg.phpcsparams}`);
-        // await exec(`${cfg.phpstancmd}`);
+        await exec(`${cfg.phpstancmd}`);
     } catch (e) {
         await Promise.reject(e.message);
     }
@@ -100,8 +112,9 @@ function doTar() {
 }
 
 exports.lint = series(
-    doComposerUpdate,
-    doLint
+    doComposerDevUpdate,
+    doLint,
+    doComposerUpdate
 )
 
 exports.copy = series(
