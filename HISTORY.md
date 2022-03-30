@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/centralnic-reseller/whmcs-dns/compare/v1.0.3...v1.0.4) (2022-03-30)
+
+
+### Bug Fixes
+
+* **activation:** drop schema before creating ([37b5c45](https://github.com/centralnic-reseller/whmcs-dns/commit/37b5c45612fa68b1a398150c07454e09608a8597))
+
 ## [1.0.3](https://github.com/centralnic-reseller/whmcs-dns/compare/v1.0.2...v1.0.3) (2022-02-15)
 
 
