@@ -43,6 +43,10 @@
     "registration",
     "application"
   ],
+  "overrides":{
+		"glob-parent":"^6.0.2",
+    "shelljs": "^0.8.5"
+	},
   "devDependencies": {
     "@hexonet/semantic-release-github-whmcs-config": "^3.0.0",
     "end-of-stream-promise": "^1.0.0",
