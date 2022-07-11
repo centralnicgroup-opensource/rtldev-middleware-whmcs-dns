@@ -1,23 +1,21 @@
 {
-    "phpcsparams": "--extensions=php --ignore=node_modules,vendor,templates_c -q .",
-    "phpcsfixcmd": "phpcbf --standard=PSR12",
-    "phpcschkcmd": "phpcs -n --colors --standard=PSR12",
-    "phpcomptcmd": "phpcs -n --colors --standard=PHPCompatibility --runtime-set testVersion \"$(php -r 'echo PHP_MAJOR_VERSION . \".\" . PHP_MINOR_VERSION;')\"",
-    "phpstancmd": "./modules/addons/cnicdns/vendor/bin/phpstan analyse",
-    "archiveFileName": "whmcs-cnic-dns",
-    "archiveBuildPath": "build",
-    "filesForArchive": [
-        "README.md",
-        "CONTRIBUTING.md",
-        "HISTORY.md",
-        "LICENSE",
-        "modules/addons/cnicdns/**"
-    ],
-    "filesForCleanup": [
-        "templates_c",
-        "composer.lock",
-        ".phpunit.result.cache",
-        "package-lock.json",
-        "tmp"
-    ]
+  "phpcsparams": "--extensions=php --ignore=node_modules,vendor,templates_c -q .",
+  "phpcsfixcmd": "phpcbf --standard=PSR12",
+  "phpcschkcmd": "phpcs -n --colors --standard=PSR12",
+  "phpstancmd": "./modules/addons/cnicdns/vendor/bin/phpstan analyse",
+  "archiveFileName": "whmcs-cnic-dns",
+  "archiveBuildPath": "build",
+  "filesForArchive": [
+    "README.md",
+    "CONTRIBUTING.md",
+    "HISTORY.md",
+    "LICENSE",
+    "modules/addons/cnicdns/**"
+  ],
+  "filesForCleanup": [
+    "templates_c",
+    "composer.lock",
+    ".phpunit.result.cache",
+    "tmp"
+  ]
 }

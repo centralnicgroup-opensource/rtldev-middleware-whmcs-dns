@@ -1,21 +1,20 @@
-const { series, src, dest } = require('gulp')
-const composer = require('gulp-composer')
-const clean = require('gulp-clean')
-const zip = require('gulp-zip')
-const exec = require('util').promisify(require('child_process').exec)
-const eosp = require('end-of-stream-promise')
-const cfg = require('./gulpfile.json')
+const { series, src, dest } = require("gulp");
+const composer = require("gulp-composer");
+const clean = require("gulp-clean");
+const zip = require("gulp-zip");
+const exec = require("util").promisify(require("child_process").exec);
+const eosp = require("end-of-stream-promise");
+const cfg = require("./gulpfile.json");
 
 /**
  * Perform composer update
  * @return stream
  */
 async function doComposerUpdate() {
-    try {
-        await exec(`rm -rf modules/addons/cnicdns/vendor`);
-    } catch (e) {
-    }
-    await eosp(composer("update --no-dev"))
+  try {
+    await exec(`rm -rf modules/addons/cnicdns/vendor`);
+  } catch (e) {}
+  await eosp(composer("update --no-dev"));
 }
 
 /**
@@ -23,32 +22,29 @@ async function doComposerUpdate() {
  * @return stream
  */
 async function doComposerDevUpdate() {
-    try {
-        await exec(`rm -rf modules/addons/cnicdns/vendor`);
-    } catch (e) {
-    }
-    await eosp(composer("update"))
+  try {
+    await exec(`rm -rf modules/addons/cnicdns/vendor`);
+  } catch (e) {}
+  await eosp(composer("update"));
 }
 
 /**
  * Perform PHP Linting
  */
 async function doLint() {
-    // these may fail, it's fine
-    try {
-        await exec(`${cfg.phpcsfixcmd} ${cfg.phpcsparams}`);
-    } catch (e) {
-    }
+  // these may fail, it's fine
+  try {
+    await exec(`${cfg.phpcsfixcmd} ${cfg.phpcsparams}`);
+  } catch (e) {}
 
-    // these shouldn't fail
-    try {
-        await exec(`${cfg.phpcschkcmd} ${cfg.phpcsparams}`);
-        await exec(`${cfg.phpcomptcmd} ${cfg.phpcsparams}`);
-        await exec(`${cfg.phpstancmd}`);
-    } catch (e) {
-        await Promise.reject(e.message);
-    }
-    await Promise.resolve();
+  // these shouldn't fail
+  try {
+    await exec(`${cfg.phpcschkcmd} ${cfg.phpcsparams}`);
+    await exec(`${cfg.phpstancmd}`);
+  } catch (e) {
+    await Promise.reject(e.message);
+  }
+  await Promise.resolve();
 }
 
 /**
@@ -56,8 +52,11 @@ async function doLint() {
  * @return stream
  */
 function doDistClean() {
-    return src([cfg.archiveBuildPath, `${cfg.archiveFileName}-latest.zip`], { read: false, base: '.', allowEmpty: true })
-        .pipe(clean({ force: true }))
+  return src([cfg.archiveBuildPath, `${cfg.archiveFileName}-latest.zip`], {
+    read: false,
+    base: ".",
+    allowEmpty: true,
+  }).pipe(clean({ force: true }));
 }
 
 /**
@@ -65,8 +64,9 @@ function doDistClean() {
  * @return stream
  */
 function doCopyFiles() {
-    return src(cfg.filesForArchive, { base: '.' })
-        .pipe(dest(cfg.archiveBuildPath))
+  return src(cfg.filesForArchive, { base: "." }).pipe(
+    dest(cfg.archiveBuildPath)
+  );
 }
 
 /**
@@ -74,8 +74,11 @@ function doCopyFiles() {
  * @return stream
  */
 function doFullClean() {
-    return src(cfg.filesForCleanup, { read: false, base: '.', allowEmpty: true })
-        .pipe(clean({ force: true }))
+  return src(cfg.filesForCleanup, {
+    read: false,
+    base: ".",
+    allowEmpty: true,
+  }).pipe(clean({ force: true }));
 }
 
 /**
@@ -83,9 +86,9 @@ function doFullClean() {
  * @return stream
  */
 function doGitZip() {
-    return src(`./${cfg.archiveBuildPath}/**`)
-        .pipe(zip(`${cfg.archiveFileName}-latest.zip`))
-        .pipe(dest('.'))
+  return src(`./${cfg.archiveBuildPath}/**`)
+    .pipe(zip(`${cfg.archiveFileName}-latest.zip`))
+    .pipe(dest("."));
 }
 
 /**
@@ -93,40 +96,23 @@ function doGitZip() {
  * @return stream
  */
 function doZip() {
-    return src(`./${cfg.archiveBuildPath}/**`)
-        .pipe(zip(`${cfg.archiveFileName}.zip`))
-        .pipe(dest('./pkg'))
+  return src(`./${cfg.archiveBuildPath}/**`)
+    .pipe(zip(`${cfg.archiveFileName}.zip`))
+    .pipe(dest("./pkg"));
 }
 
-exports.lint = series(
-    doComposerDevUpdate,
-    doLint,
-    doComposerUpdate
-)
+exports.lint = series(doComposerDevUpdate, doLint, doComposerUpdate);
 
-exports.copy = series(
-    doDistClean,
-    doCopyFiles
-)
+exports.copy = series(doDistClean, doCopyFiles);
 
-exports.prepare = series(
-    exports.lint,
-    exports.copy
-)
+exports.prepare = series(exports.lint, exports.copy);
 
-exports.archives = series(
-    doGitZip,
-    doZip
-)
+exports.archives = series(doGitZip, doZip);
 
-exports.default = series(
-    exports.prepare,
-    exports.archives,
-    doFullClean
-)
+exports.default = series(exports.prepare, exports.archives, doFullClean);
 exports.release = series(
-    doComposerUpdate,
-    exports.copy,
-    exports.archives,
-    doFullClean
-)
+  doComposerUpdate,
+  exports.copy,
+  exports.archives,
+  doFullClean
+);
