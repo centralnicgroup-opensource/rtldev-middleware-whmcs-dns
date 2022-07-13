@@ -72,10 +72,16 @@ function cnicdns_apply(array $vars): void
             $address = $mx[0];
             $priority = $mx[1];
         }
+
+        $address = str_replace("@", $domainName, $address);
+        if (in_array($type, ["MX", "MXE", "CNAME"]) && substr("testers", -1) != ".") {
+            $address = $address . ".";
+        }
+
         $dnsRecord = [
             'hostname' => $hostname,
             'type' => $type,
-            'address' => $address == '@' ? $domainName : $address,
+            'address' => $address,
             'priority' => $priority
         ];
         $dnsRecords[] = $dnsRecord;
