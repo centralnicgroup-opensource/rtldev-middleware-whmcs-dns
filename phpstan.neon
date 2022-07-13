@@ -14,8 +14,11 @@ parameters:
         - node_modules
         - modules/addons/cnicdns/vendor
         - build
-        - tests 
+        - tests
     bootstrapFiles:
         - tests/_bootstrap.phpstan.php
         - modules/addons/cnicdns/vendor/autoload.php
-        
+    ignoreErrors:
+        -
+            message: '#Function add_hook not found#'
+            path: modules/addons/cnicdns/hooks.php
