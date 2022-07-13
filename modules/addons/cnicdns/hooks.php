@@ -90,14 +90,12 @@ function cnicdns_apply(array $vars): void
         'dnsrecords' => $dnsRecords,
     ];
 
-//    localAPI('LogActivity', ['description' => print_r($params, true)]);
-
     // @phpstan-ignore-next-line
     $result = RegSaveDNS($params);
     if ($result['error']) {
-        localAPI('LogActivity', ['description' => "{$domainName}: failed to apply zone template [DNS]"]);
+        localAPI('LogActivity', ['description' => "[DNS] $domainName: failed to apply zone template"]);
     } else {
-        localAPI('LogActivity', ['description' => "{$domainName}: successfully applied zone template [DNS]"]);
+        localAPI('LogActivity', ['description' => "[DNS] $domainName: successfully applied zone template"]);
     }
 }
 
