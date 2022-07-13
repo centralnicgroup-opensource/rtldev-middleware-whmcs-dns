@@ -60,9 +60,9 @@ class Template
 
     /**
      * @param string $domain
-     * @return string
+     * @return string|null
      */
-    public static function getIp(string $domain): string
+    public static function getIp(string $domain): ?string
     {
         $result = DB::table('tblhosting AS h')
             ->leftJoin('tblservers AS s', 's.id', '=', 'h.server')
