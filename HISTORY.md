@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/centralnic-reseller/whmcs-dns/compare/v1.2.1...v1.2.2) (2022-07-14)
+
+
+### Bug Fixes
+
+* **ci:** usage of WHMCS Marketplace Product ID patched ([37edf5f](https://github.com/centralnic-reseller/whmcs-dns/commit/37edf5f28fd6c9b4af1995da6050bb019b2d887a))
+
 ## [1.2.1](https://github.com/centralnic-reseller/whmcs-dns/compare/v1.2.0...v1.2.1) (2022-07-14)
 
 
