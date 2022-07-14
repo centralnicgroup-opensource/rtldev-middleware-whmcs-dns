@@ -72,10 +72,16 @@ function cnicdns_apply(array $vars): void
             $address = $mx[0];
             $priority = $mx[1];
         }
+
+        $address = str_replace("@", $domainName, $address);
+        if (in_array($type, ["MX", "MXE", "CNAME"]) && substr("testers", -1) != ".") {
+            $address = $address . ".";
+        }
+
         $dnsRecord = [
             'hostname' => $hostname,
             'type' => $type,
-            'address' => $address == '@' ? $domainName : $address,
+            'address' => $address,
             'priority' => $priority
         ];
         $dnsRecords[] = $dnsRecord;
@@ -90,14 +96,12 @@ function cnicdns_apply(array $vars): void
         'dnsrecords' => $dnsRecords,
     ];
 
-//    localAPI('LogActivity', ['description' => print_r($params, true)]);
-
     // @phpstan-ignore-next-line
     $result = RegSaveDNS($params);
     if ($result['error']) {
-        localAPI('LogActivity', ['description' => "{$domainName}: failed to apply zone template [DNS]"]);
+        localAPI('LogActivity', ['description' => "[DNS] $domainName: failed to apply zone template"]);
     } else {
-        localAPI('LogActivity', ['description' => "{$domainName}: successfully applied zone template [DNS]"]);
+        localAPI('LogActivity', ['description' => "[DNS] $domainName: successfully applied zone template"]);
     }
 }
 
