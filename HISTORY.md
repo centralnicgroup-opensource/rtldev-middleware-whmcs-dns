@@ -1,3 +1,12 @@
+## [1.2.1](https://github.com/centralnic-reseller/whmcs-dns/compare/v1.2.0...v1.2.1) (2022-07-14)
+
+
+### Bug Fixes
+
+* **composer:** composer.lock added to git ([87be852](https://github.com/centralnic-reseller/whmcs-dns/commit/87be8526babd59eaebb1500008da38e984fa3783))
+* **dns:** fix handling of @ character in templates ([859d3da](https://github.com/centralnic-reseller/whmcs-dns/commit/859d3dac9b4cb17b166b1b64734fe95b7f8d2c77))
+* **ip:** fix return type of getIp method ([fd474e3](https://github.com/centralnic-reseller/whmcs-dns/commit/fd474e3a1aec0fd71be434d4371e3293e3f20df7))
+
 # [1.2.0](https://github.com/centralnic-reseller/whmcs-dns/compare/v1.1.0...v1.2.0) (2022-03-30)
 
 
