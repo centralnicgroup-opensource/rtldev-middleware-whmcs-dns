@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/centralnic-reseller/whmcs-dns/compare/v1.2.2...v1.3.0) (2022-07-25)
+
+
+### Features
+
+* **logging:** improve logging and include request/response on failure ([8edddfe](https://github.com/centralnic-reseller/whmcs-dns/commit/8edddfe17d9f5f9927dc1d51740beaf3c01b3acf))
+
 ## [1.2.2](https://github.com/centralnic-reseller/whmcs-dns/compare/v1.2.1...v1.2.2) (2022-07-14)
 
 
