@@ -22,3 +22,9 @@ parameters:
         -
             message: '#Function add_hook not found#'
             path: modules/addons/cnicdns/hooks.php
+        -
+            message: '#Access to an undefined property object::\$name#'
+            path: modules/addons/cnicdns/hooks.php
+        -
+            message: '#Access to an undefined property object::\$zone#'
+            path: modules/addons/cnicdns/hooks.php

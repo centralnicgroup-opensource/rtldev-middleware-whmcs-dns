@@ -16,7 +16,7 @@ class Template
 
     /**
      * @param string $domain
-     * @return string|null
+     * @return \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Query\Builder|object|null
      */
     public static function getForDomain(string $domain)
     {
@@ -30,25 +30,25 @@ class Template
             if ($templateId) {
                 return DB::table('mod_cnicdns_templates')
                     ->where('id', '=', $templateId)
-                    ->value('zone');
+                    ->first(['name', 'zone']);
             }
         }
         return self::getDefault();
     }
 
     /**
-     * @return string|null
+     * @return \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Query\Builder|object|null
      */
-    public static function getDefault()
+    private static function getDefault()
     {
         return DB::table('mod_cnicdns_templates')
             ->where('default', '=', true)
-            ->value('zone');
+            ->first(['name', 'zone']);
     }
 
     /**
      * @param int $templateId
-     * @return \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Query\Builder|object|null
+     * @return \Illuminate\Support\Collection
      */
     public static function get(int $templateId)
     {
