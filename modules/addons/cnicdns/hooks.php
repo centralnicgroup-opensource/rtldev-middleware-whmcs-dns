@@ -42,18 +42,22 @@ function cnicdns_apply(array $vars): void
     $template = Template::getForDomain($domainName);
 
     $dnsRecords = [];
-    if (!$template) {
-        localAPI('LogActivity', ['description' => "[DNS] ERROR: empty template"]);
+    if ($template === null) {
+        localAPI('LogActivity', ['description' => "[DNS] INFO: no matching template for domain"]);
         return;
     }
-    $lines = preg_split("/((\r?\n)|(\r\n?))/", $template);
+    $lines = preg_split("/((\r?\n)|(\r\n?))/", $template->zone);
     if ($lines === false) {
         localAPI('LogActivity', ['description' => "[DNS] ERROR: empty template"]);
         return;
     }
     foreach ($lines as $line) {
+        if (!$line) {
+            continue;
+        }
         $record = explode(' ', $line, 3);
         if (count($record) < 3) {
+            localAPI('LogActivity', ['description' => "[DNS] WARN: invalid record $line"]);
             continue;
         }
 
@@ -64,6 +68,7 @@ function cnicdns_apply(array $vars): void
         if ($type == 'A' && $address == '%ip%') {
             $address = Template::getIp($domainName);
             if (!$address) {
+                localAPI('LogActivity', ['description' => "[DNS] WARN: unable to determine IP address for $domainName"]);
                 continue;
             }
         }
@@ -87,6 +92,11 @@ function cnicdns_apply(array $vars): void
         $dnsRecords[] = $dnsRecord;
     }
 
+    if (empty($dnsRecords)) {
+        localAPI('LogActivity', ['description' => "[DNS] WARN: no records for $domainName"]);
+        return;
+    }
+
     $params = [
         'domainid' => $vars['params']['domainid'],
         'sld' => $vars['params']['sld'],
@@ -99,9 +109,11 @@ function cnicdns_apply(array $vars): void
     // @phpstan-ignore-next-line
     $result = RegSaveDNS($params);
     if ($result['error']) {
-        localAPI('LogActivity', ['description' => "[DNS] $domainName: failed to apply zone template"]);
+        localAPI('LogActivity', ['description' => "[DNS] request: " . print_r($params, true)]);
+        localAPI('LogActivity', ['description' => "[DNS] response: " . print_r($result, true)]);
+        localAPI('LogActivity', ['description' => "[DNS] $domainName: failed to apply zone template $template->name"]);
     } else {
-        localAPI('LogActivity', ['description' => "[DNS] $domainName: successfully applied zone template"]);
+        localAPI('LogActivity', ['description' => "[DNS] $domainName: successfully applied zone template $template->name"]);
     }
 }
 
