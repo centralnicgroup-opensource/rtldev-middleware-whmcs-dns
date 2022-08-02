@@ -1,4 +1,4 @@
-# WHMCS "CentralNic" DNS Module #
+# WHMCS "CentralNic Reseller" DNS Module #
 
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![Build Status](https://github.com/centralnic-reseller/whmcs-dns/workflows/Release/badge.svg?branch=master)](https://github.com/centralnic-reseller/whmcs-dns/workflows/Release/badge.svg?branch=master)
@@ -21,4 +21,4 @@ This Repository covers the WHMCS DNS Module of CentralNic's Reseller Division. D
 
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/centralnic-reseller/whmcs-dns/blob/master/LICENSE) file for details.
 
-[CentralNic Group PLC](https://centralnicgroup.com)
+[CentralNic Reseller](https://www.centralnicreseller.com)

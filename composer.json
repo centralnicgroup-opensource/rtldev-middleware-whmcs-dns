@@ -1,6 +1,6 @@
 {
-  "name": "centralnick/whmcs-dns",
-  "description": "CentralNic DNS Addon Module for WHMCS",
+  "name": "centralnic/whmcs-dns",
+  "description": "CentralNic Reseller DNS Addon Module for WHMCS",
   "type": "project",
   "license": "MIT",
   "authors": [

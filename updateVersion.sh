@@ -15,7 +15,7 @@ else
   sed -E -i -e "${sed_script}" modules/addons/cnicdns/cnicdns.php
 fi
 
-printf -v sed_script 's/"CentralNic DNS Addon v[0-9]+\.[0-9]+\.[0-9]+"/"CentralNic DNS Addon v%s"/g' "${newversion}"
+printf -v sed_script 's/"CentralNic Reseller DNS Addon v[0-9]+\.[0-9]+\.[0-9]+"/"CentralNic Reseller DNS Addon v%s"/g' "${newversion}"
 if [[ "$OSTYPE" == "darwin"* ]]; then
   sed -E -i '' -e "${sed_script}" modules/addons/cnicdns/whmcs.json
 else

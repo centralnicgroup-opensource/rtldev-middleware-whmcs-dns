@@ -1,9 +1,9 @@
 <?php
 
 /**
- * CentralNic DNS Addon for WHMCS
+ * CentralNic Reseller DNS Addon for WHMCS
  *
- * DNS management using WHMCS & CentralNic brands
+ * DNS management using WHMCS & CentralNic Reseller
  *
  * For more information, please refer to the online documentation.
  * @see https://centralnic-reseller.github.io/centralnic-reseller/

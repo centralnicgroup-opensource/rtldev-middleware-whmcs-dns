@@ -1,6 +1,6 @@
 {
   "name": "whmcs-cnicdns",
-  "description": "WHMCS CentralNic DNS Module",
+  "description": "WHMCS CentralNic Reseller DNS Module",
   "version": "0.0.0-development",
   "private": true,
   "author": {
@@ -29,7 +29,7 @@
     "whmcs",
     "web host automation platform",
     "dns module",
-    "CentralNic",
+    "CentralNic Reseller",
     "HEXONET",
     "ISPAPI",
     "domain",
