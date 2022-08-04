@@ -5,7 +5,7 @@
 $_ADDONLANG = [
     'deleteConfirm' => "Sei sicuro di voler eliminare questo modello di zona?",
     'description' => "Configura modelli DNS per i tuoi domini",
-    'errorRegistrar' => "Nessun modulo registrar compatibile attivo. I moduli compatibili sono ISPAPI e KeySystems.",
+    'errorRegistrar' => "Nessun modulo registrar compatibile attivo. I moduli compatibili sono ISPAPI e CentralNic rivenditori.",
     'errorRender' => "Impossibile visualizzare la pagina",
     'example' => "Esempio",
     'instructions' => "Istruzioni",

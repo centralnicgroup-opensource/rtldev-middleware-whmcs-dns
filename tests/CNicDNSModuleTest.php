@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
  *
  * Custom module tests are added in addtion.
  *
- * @copyright Copyright (c) CentralNic Group PLC 2021
+ * @copyright Copyright (c) CentralNic Reseller 2022
  * @license https://github.com/centralnic-reseller/whmcs-dns/LICENSE
  */
 

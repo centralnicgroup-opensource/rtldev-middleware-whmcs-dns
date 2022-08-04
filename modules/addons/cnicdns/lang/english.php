@@ -5,7 +5,7 @@
 $_ADDONLANG = [
     'deleteConfirm' => "Are you sure you want to delete this zone template?",
     'description' => "Configure DNS templates for your domains",
-    'errorRegistrar' => "No compatible registrar module is active. Compatible modules are ISPAPI and KeySystems.",
+    'errorRegistrar' => "No compatible registrar module is active. Compatible modules are ISPAPI and CentralNic Reseller.",
     'errorRender' => "Unable to render template",
     'example' => "Example",
     'instructions' => "Instructions",

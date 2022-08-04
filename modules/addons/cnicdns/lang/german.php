@@ -5,7 +5,7 @@
 $_ADDONLANG = [
     'deleteConfirm' => "Möchten Sie diese Zonenvorlage wirklich löschen?",
     'description' => "DNS-Vorlagen für Ihre Domains konfigurieren",
-    'errorRegistrar' => "Kein kompatibles Registrar-Modul aktiv. Kompatible Module sind ISPAPI und KeySystems.",
+    'errorRegistrar' => "Kein kompatibles Registrar-Modul aktiv. Kompatible Module sind ISPAPI und CentralNic Wiederverkäufer.",
     'errorRender' => "Vorlage kann nicht ausgegeben werden",
     'example' => "Beispiel",
     'instructions' => "Anleitung",

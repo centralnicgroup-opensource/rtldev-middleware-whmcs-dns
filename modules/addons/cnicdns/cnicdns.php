@@ -3,7 +3,7 @@
 /**
  * CentralNic DNS Addon for WHMCS
  *
- * DNS management using WHMCS & CentralNick brands
+ * DNS management using WHMCS & CentralNic brands
  *
  * For more information, please refer to the online documentation.
  * @see https://centralnic-reseller.github.io/centralnic-reseller/
@@ -25,7 +25,7 @@ function cnicdns_config(): array
     return [
         "name" => "CNIC DNS",
         "description" => "Configure DNS templates for your domains",
-        "author" => '<a href="https://www.centralnicgroup.com/" target="_blank"><img style="max-width:100px" src="' . DNSHelper::getLogo() . '" alt="CentralNic" /></a>',
+        "author" => '<a href="https://www.centralnicreseller.com/" target="_blank"><img style="max-width:100px" src="' . DNSHelper::getLogo() . '" alt="CentralNic Reseller" /></a>',
         "language" => "english",
         "version" => "1.3.0"
     ];
